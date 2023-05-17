@@ -13,7 +13,7 @@ namespace ariel{
         int speed;
     public:
         Ninja(const Point position, int hp, const string& name, int speed);
-        virtual ~Ninja() = default;
+        ~Ninja() = default;
 
         int getSpeed() const;
 

@@ -13,7 +13,7 @@ namespace ariel{
         int bullets;
     public:
         Cowboy(const string& name, const Point position);
-        virtual ~Cowboy() = default;
+        ~Cowboy() = default;
 
         int getBullets() const;
         bool hasBullets() const;

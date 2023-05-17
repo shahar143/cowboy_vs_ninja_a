@@ -14,6 +14,12 @@ int Ninja::getSpeed() const{
 }
 
 void Ninja::slash(Character* target){
+    if(target == nullptr){
+        throw invalid_argument("target cannot be null");
+    }
+    if(this == target){
+        throw invalid_argument("you cannot slash yourself");
+    }
     if(this->isAlive() && this->distance(target) <= 1){
         target->hit(40);
     }

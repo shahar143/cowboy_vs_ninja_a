@@ -13,9 +13,20 @@ int Cowboy::getBullets() const{
 }
 
 void Cowboy::shoot(Character* target){
-    if(bullets > 0 && this->isAlive()){
-        bullets--;
-        target->hit(10);
+    if(target == nullptr){
+        throw invalid_argument("target cannot be null");
+    }
+    if(this == target){
+        throw invalid_argument("you cannot shoot yourself");
+    }
+    if(this->isAlive()){
+        if(bullets > 0){
+            bullets--;
+            target->hit(10);
+        }
+        else{
+            reload();
+        }
     }
 }
 
